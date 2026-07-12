@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-base: #ffffff;
+  --color-surface: #f8fafc;
+  --color-surface-2: #eef2f8;
+  --color-surface-hover: #e6ecf5;
+  --color-border: #dde3ed;
+  --color-border-soft: #e7ecf3;
+
+  --color-text: #16202f;
+  --color-text-muted: #55627a;
+  --color-text-faint: #8994a8;
+
+  --color-accent: #2e6da4;
+  --color-accent-strong: #1d5c94;
+  --color-signal: #b8791e;
+  --color-good: #2f8f5b;
+  --color-risk: #c1503f;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  background: var(--color-base);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: rgba(46, 109, 164, 0.16);
+  color: #16202f;
+}
+
+/* thin scrollbars for horizontal chip rails */
+.chip-rail::-webkit-scrollbar {
+  height: 5px;
+}
+.chip-rail::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 999px;
+}
+.chip-rail {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-rise {
+  animation: rise 0.28s ease-out both;
+}
