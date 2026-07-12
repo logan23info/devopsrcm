@@ -26,32 +26,6 @@ npm run build
 npm run preview   # optional: serve the production build locally
 ```
 
-## Deploy to Vercel (GitHub-connected)
-
-1. **Push this project to a new GitHub repository.**
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit: DevOps Security Controls Matrix"
-   git branch -M main
-   git remote add origin https://github.com/<your-username>/devops-security-controls-matrix.git
-   git push -u origin main
-   ```
-
-2. **Import the repo in Vercel.**
-   - Go to https://vercel.com/new
-   - Select "Import Git Repository" and choose the repo you just pushed.
-   - Framework preset: Vercel auto-detects **Vite** — no changes needed.
-   - Build command: `npm run build` (default)
-   - Output directory: `dist` (default)
-   - Click **Deploy**.
-
-3. Vercel will build and give you a live `*.vercel.app` URL. Every push to `main`
-   redeploys automatically.
-
-`vercel.json` is already included with a SPA rewrite rule so client-side tab
-navigation works correctly on refresh/deep links.
-
 ## Project structure
 
 ```
